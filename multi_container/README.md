@@ -22,7 +22,7 @@ docker build --tag=api-multicontainer .
 
 run app with connections
 ```sh
-docker run --rm --detach --network=api-network --env REDIS_CONNECTION_STRING=redis://redis:6379 api-multicontainer
+docker run --rm --detach --publish 3000:3000 --network=api-network --env REDIS_CONNECTION_STRING=redis://redis:6379 api-multicontainer
 ```
 
 
