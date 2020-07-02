@@ -34,6 +34,10 @@ show running containers
 ```sh
 docker ps
 ```  
+show network details
+```sh
+docker network ls
+```  
 
 list available images
 ```sh
