@@ -1,0 +1,7 @@
+
+```sh
+docker-compose up
+```
+
+
+
