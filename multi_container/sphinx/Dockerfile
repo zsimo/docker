@@ -1,3 +1,1 @@
-FROM nginx:alpine
-
-COPY default.conf /etc/nginx/conf.d/
+FROM jc21/sphinxsearch

@@ -2,7 +2,9 @@
 use docker compose or config by hand
 ```sh
 docker-compose up -d
+docker-compose up -d --build
 docker-compose kill
+docker system prune -a
 ```
 
 
@@ -18,6 +20,14 @@ docker run -d -p 6379:6379 --network=api-network --name=redis --rm redis:6-alpin
 docker exec -it redis redis-cli
 docker ps
 docker top redis
+```
+
+
+sphinx
+```sh
+docker build --tag=sphinx ./sphinx/
+docker run -d -p 8080:80 --network=api-network --name=nginx nginx
+docker run -d -p 9306:9306 --name sphinx sphinx
 ```
 
 nginx
