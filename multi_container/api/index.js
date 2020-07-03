@@ -21,7 +21,7 @@ fastify.get('/', async function (request, reply) {
     var out = {
         redis: await PING()
     };
-    
+
     reply.send(out);
 });
 
