@@ -1,12 +1,15 @@
 version: "3"
 services:
-  api-network:
-    build: ../multi_container/Dockerfile
+  web:
+    build: .
+    ports:
+    - "3000:3000"
     volumes:
-      - .:/home/node/code
+    - .:/home/node/code
+    - /home/node/code/node_modules
     links:
-    - redis
+    - db
     environment:
-      REDIS_CONNECTION_STRING: redis://redis:6379
-  redis:
-    image: redis:6-alpine
+      MONGO_CONNECTION_STRING: mongodb://db:27017
+  db:
+    image: mongo:3
