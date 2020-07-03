@@ -2,6 +2,7 @@
 use docker compose or config by hand
 ```sh
 docker-compose up -d
+docker-compose kill
 ```
 
 

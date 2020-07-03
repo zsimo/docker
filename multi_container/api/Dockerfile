@@ -16,4 +16,6 @@ RUN yarn
 # copy all file (except the onese listed in .dockerignore)
 COPY --chown=node:node . .
 
+EXPOSE 3000
+
 CMD ["node", "index.js"]

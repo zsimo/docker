@@ -49,5 +49,8 @@ build a container using the dockerfile in the current directory
 docker build --tag my-node-container .
 docker run my-node-container
 ```  
-    
-   
+
+remove all
+```sh
+docker system prune -a
+```  

@@ -1,12 +1,23 @@
 version: "3"
 services:
+  nginx:
+    container_name: nginx
+    build: ./nginx/
+    ports:
+    - "80:80"
+    links:
+    - api
   api:
     build: ./api/
-    ports:
-    - "3000:3000"
+    container_name: api
     links:
     - redis
     environment:
       REDIS_CONNECTION_STRING: redis://redis:6379
   redis:
+    container_name: redis
     image: redis:6-alpine
+
+networks:
+  api-network:
+    driver: bridge
