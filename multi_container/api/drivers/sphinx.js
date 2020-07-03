@@ -5,6 +5,7 @@ var mysql = require('mysql');
 var config = require(path.resolve(process.cwd(), "config"));
 
 var sphinxConnectionString = process.env.SPHINX_CONNECTION_STRING || `mysql://${config.SPHINX_HOST}/db?port=${config.SPHINX_PORT}`;
+console.log(process.env.SPHINX_CONNECTION_STRING)
 
 // var dbConnection = mysql.createPool({
 //     host: config.SPHINX_HOST,

@@ -8,15 +8,20 @@ services:
     links:
     - api
   api:
-    build: ./api/
     container_name: api
+    build: ./api/
     links:
     - redis
+    - sphinx
     environment:
       REDIS_CONNECTION_STRING: redis://redis:6379
+      SPHINX_CONNECTION_STRING: mysql://sphinx/db?port=9306
   redis:
     container_name: redis
     image: redis:6-alpine
+  sphinx:
+    container_name: sphinx
+    build: ./sphinx/
 
 networks:
   api-network:
