@@ -22,7 +22,3 @@ services:
   sphinx:
     container_name: sphinx
     build: ./sphinx/
-
-networks:
-  api-network:
-    driver: bridge
