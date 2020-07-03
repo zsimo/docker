@@ -1,0 +1,12 @@
+version: "3"
+services:
+  api:
+    build: ./api/
+    ports:
+    - "3000:3000"
+    links:
+    - redis
+    environment:
+      REDIS_CONNECTION_STRING: redis://redis:6379
+  redis:
+    image: redis:6-alpine

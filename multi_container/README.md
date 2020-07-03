@@ -1,4 +1,10 @@
 
+use docker compose or config by hand
+```sh
+docker-compose up -d
+```
+
+
 create a new bridged network
 ```sh
 docker network create --driver=bridge api-network
