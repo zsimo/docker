@@ -10,7 +10,7 @@ var redisOptions = {
     retry_strategy: retryStrategy
 };
 
-var redisConnectionString = process.env.REDIS_CONNECTION_STRING || `redis://${config.REDIS_HOST}:${REDIS_PORT}`;
+var redisConnectionString = process.env.REDIS_CONNECTION_STRING || `redis://${config.REDIS_HOST}:${config.REDIS_PORT}`;
 
 var client = redis.createClient(redisConnectionString, redisOptions);
 
